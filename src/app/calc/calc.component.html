@@ -1,0 +1,21 @@
+<div>
+  <label>
+    x:
+    <input type="number" [formControl]="x">
+  </label>
+
+  <label>
+    y:
+    <input type="number" [formControl]="y">
+  </label>
+
+  <div>
+    <button (click)="onCalc()">Calc</button>
+  </div>
+
+  <div *ngIf="result$ | async as result; else loading">
+    {{ result }}
+  </div>
+  <ng-template #loading>Calculating...</ng-template>
+
+</div>
